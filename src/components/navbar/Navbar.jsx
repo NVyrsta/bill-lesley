@@ -2,8 +2,9 @@
 
 import Link from "next/link";
 import React from "react";
-import styles from "./navbar.module.css";
+import "./navbar.scss";
 import DarkModeToggle from "../DarkModeToggle/DarkModeToggle";
+import ActiveLink from '../ActiveLink/ActiveLink';
 
 const links = [
   {
@@ -40,19 +41,28 @@ const links = [
 
 const Navbar = () => {
   return (
-    <div className={styles.container}>
-      <Link href="/" className={styles.logo}>
+    <header className="header">
+
+   
+    <nav className="navbar">
+      <Link href="/" className='navbar__logo'>
         Bill Lesley
       </Link>
-      <div className={styles.links}>
+      <ul className='navbar__links'>
         <DarkModeToggle />
         {links.map((link) => (
-          <Link key={link.id} href={link.url} className={styles.link}>
+          <ActiveLink key={link.id} href={link.url}>
             {link.title}
-          </Link>
+          </ActiveLink>
         ))}
+      </ul>
+      <div className="navbar__menu">
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
-    </div>
+    </nav>
+    </header>
   );
 };
 

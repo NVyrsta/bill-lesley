@@ -1,0 +1,68 @@
+@import '../../styles/mixin';
+
+.about {
+
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 15px;
+          line-height: 1.6;
+
+
+    @include onTablet {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__desc h3 {
+    position: relative;
+    font-family: 'Playfair Display', serif;
+      font-size: 38px;
+      padding-top: 70px;
+      margin-bottom: 30px;
+
+
+      &::before {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 2px;
+    background-color: #ffef72;
+    left: 20px;
+    top: 20%;
+    transform: translateX(-50%);
+
+  }
+  }
+
+  &__desc p {
+    margin-bottom: 30px;
+  }
+
+  &__desc-img {
+    min-height: 353px;
+    overflow: hidden;
+    
+    @include onTablet {
+      max-height: 200px;
+    }
+    
+    @include onDesktop {
+      max-height: 285px;
+    }
+  }
+
+  &__desc-img:nth-child(2){
+    background-image: url('../../../public/about-1.jpg');
+    background-position: 0 70%;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  &__desc-img:nth-child(3){
+    background-image: url('../../../public/about-2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}

@@ -1,8 +1,8 @@
 import React from "react";
-import styles from "./page.module.css";
+import "./blog.scss";
 
 const TeachingPhilosophy = () => {
-  return <div className={styles.container}>TeachingPhilosophy</div>;
+  return <div>BLOG</div>;
 };
 
 export default TeachingPhilosophy;

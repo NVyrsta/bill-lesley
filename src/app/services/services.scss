@@ -1,0 +1,49 @@
+@import '../../styles/mixin';
+
+.services {
+
+  &__intro {
+    text-align: center;
+    line-height: 1.6;
+    padding: 100px 15px 50px;
+
+    @include onDesktop {
+      @include x-center;
+      width: 60%;
+    }
+  }
+
+  &__items {
+    display: grid;
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 50px;
+
+
+
+    @include onTablet {
+    grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include onDesktop {
+    grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__item-img {
+      background-color: #FFEF72;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100px;
+      height: 100px;
+      margin-bottom: 30px;
+
+      @include x-center;
+  }
+
+  &__item p {
+    font-size: 18px;
+  }
+}
